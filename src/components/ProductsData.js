@@ -7,7 +7,7 @@ export default function ProductsData(mealPart, numberProducts){
     let descpritionPart = "";
     let initialPrice = 0;
     let image;
-    if(mealPart === "main-course"){
+    if(mealPart === "main_course"){
         partName = "Prato";
         descpritionPart = "Esse é um ótimo prato, muito bom mesmo";
         initialPrice = 15.00;
