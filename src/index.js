@@ -1,10 +1,10 @@
 import ReactDOM from 'react-dom';
-import TopPage from './components/TopPage';
-import BottomButton from './components/BottomButton';
-import AllProducts from './components/AllProducts';
-import React from 'react';
 import './reset.css';
 import './styles.css';
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import HomeScreen from './components/HomeScreen';
+import ConfirmOrder from './components/ConfirmOrder';
+import React from 'react';
 
 export default function App(){
     const qtdMain = 8;
@@ -18,19 +18,19 @@ export default function App(){
     const [productsQuant, setProductsQuant] = React.useState(quantities);
     return(
         <>
-        <TopPage/>
-        <AllProducts
-        productsQuant={productsQuant}
-        setProductsQuant={setProductsQuant}
-        qtdMain={qtdMain}
-        qtdDrink={qtdDrink}
-        qtdDesert={qtdDesert}
-        />
-        <BottomButton products={productsQuant}/>
+        <Switch>
+            <Route path='/' exact component = {() => <HomeScreen 
+            qtdMain={qtdMain}
+            qtdDrink={qtdDrink}
+            qtdDesert={qtdDesert}
+            productsQuant={productsQuant}
+            setProductsQuant={setProductsQuant}
+            />}/>
+            <Route path='/revisar' component={()=> <ConfirmOrder products={productsQuant}/>}/>
+        </Switch>
+        
         </>
     );
 }
 
-const app = <App/>;
-
-ReactDOM.render(app, document.querySelector(".root"))
+ReactDOM.render(<BrowserRouter><App/></BrowserRouter>, document.querySelector(".root"))

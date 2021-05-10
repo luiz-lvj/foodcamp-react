@@ -1,4 +1,4 @@
-import SendMessage from './SendMessage';
+import { Link } from 'react-router-dom';
 
 export default function BottomButton(props){
     function isThereMainCourse(){
@@ -38,20 +38,14 @@ export default function BottomButton(props){
     }
     
     const isActiveSell = isThereMainCourse() && isThereDrink() && isThereDesert();
-
     const classButton = isActiveSell ? "active" : "";
     const textActive = "Fechar Pedido";
     const textInactive = "Selecione os 3 itens para fechar o pedido";
     const textButton = isActiveSell ? textActive : textInactive;
-    const isDisabled = isActiveSell ? "" : "disabled";
-
+    const linkButton = isActiveSell ? '/revisar' : '/';
     return(
         <div className="bottom-button" >
-            <button className={classButton}
-            onClick={()=>{
-                SendMessage(props.products)
-            }}
-            disabled={isDisabled}>{textButton}</button>
+            <Link to={linkButton} className={classButton}>{textButton}</Link>
         </div>
     );
 }

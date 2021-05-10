@@ -147,7 +147,7 @@ body{
     right: 0;
     box-shadow: 0px 4px 4px rgba(0,0,0,0.25);
 }
-.bottom-button button{
+.bottom-button a{
     width: 85%;
     height: 61px;
     background: #CBCBCB;
@@ -158,8 +158,64 @@ body{
     color: #FFFFFF;
     padding-left: 10%;
     padding-right: 10%;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
 }
-.bottom-button button.active{
+.bottom-button a.active{
     background: #32B72F;
     font-weight: bold;
+    padding-left: 27%;
+    padding-right: 20%;
+}
+.check-card{
+    width: 100%;
+    padding: 30px;
+    background: #FFFFFF;
+    border-radius: 9px;
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.15);
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 33px;
+}
+.check-card li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 13px;
+}
+.check-card li p{
+    font-size: 22px;
+}
+.check-card li p.total{
+    font-weight: bold;
+    color: #333333
+}
+.products.check{
+    align-items: center;
+}
+.products.check button{
+    width: 88%;
+    height: 52px;
+    background: #32B72F;
+    border: none;
+    border-radius: 50px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 22px;
+    color: #FFFFFF;
+    padding-left: 14%;
+    padding-right: 10%;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+.products.check a{
+    text-decoration: none;
+    color: #777777;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
 }
